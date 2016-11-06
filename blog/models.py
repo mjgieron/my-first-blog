@@ -1,5 +1,7 @@
+from __future__ import unicode_literals
 from django.db import models
 from django.utils import timezone
+
 
 
 class Post(models.Model):
@@ -10,7 +12,7 @@ class Post(models.Model):
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
-#    image = models.TextField()
+    docfile = models.FileField(upload_to='documents/%Y/%m/%d', null=True)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -18,3 +20,8 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Document(models.Model):
+    description = models.CharField(max_length=255, blank=True)
+    document = models.FileField(upload_to='documents/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
