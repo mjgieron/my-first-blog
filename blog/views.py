@@ -44,24 +44,12 @@ def post_delete(request, pk):
     post = get_object_or_404(Post, pk=pk).delete()
     return redirect('post_list')
 
-def simple_upload(request):
-    if request.method == 'POST' and request.FILES['myfile']:
-        myfile = request.FILES['myfile']
-        fs = FileSystemStorage()
-        filename = fs.save(myfile.name, myfile)
-        uploaded_file_url = fs.url(filename)
-        return render(request, 'blog/simple_upload.html', {
-            'uploaded_file_url': uploaded_file_url
-        })
-    return render(request, 'blog/simple_upload.html')
-
-
 def model_form_upload(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('blog/post_edit.html')
+            return redirect('post_list')
     else:
         form = DocumentForm()
     return render(request, 'blog/model_form_upload.html', {

@@ -24,9 +24,7 @@ urlpatterns = [
     url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail, name='post_detail'),
     url(r'^post/new/$', views.post_new, name='post_new'),
     url(r'^post/(?P<pk>[0-9]+)/edit/$', views.post_edit, name='post_edit'),
-    url(r'^post/(?P<pk>[0-9]+)/(?P<pk>[0-9]+)/edit/$', views.post_edit, name='post_edit'),
     url(r'^post/(?P<pk>[0-9]+)/delete/$', views.post_delete, name='post_delete'),
-    url(r'^post/simple_upload/$', views.simple_upload, name='simple_upload'),
     url(r'^post/form/$', views.model_form_upload, name='model_form_upload'),
 ]
 
