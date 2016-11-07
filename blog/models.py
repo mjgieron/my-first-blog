@@ -7,6 +7,9 @@ class Document(models.Model):
     document = models.FileField(upload_to='documents/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.description
+
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
@@ -15,7 +18,7 @@ class Post(models.Model):
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
-    files = models.ManyToManyField(Document)
+    files = models.OneToOneField(Document, null=True)
 
     def publish(self):
         self.published_date = timezone.now()
