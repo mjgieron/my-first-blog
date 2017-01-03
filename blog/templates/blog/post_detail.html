@@ -11,6 +11,6 @@
 	<a class="btn btn-default" href="{% url 'post_delete' pk=post.pk %}"><span class="glyphicon glyphicon-trash"></span></a>
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
-	<p>zdjęcie: {{ post.files}}</p>
+	<p>zdjęcie: {{ post.picture}}</p>
     </div>
 {% endblock %}
