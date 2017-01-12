@@ -7,9 +7,14 @@ from .models import Project
 from .forms import ProjectForm
 from .models import Other
 from .forms import OtherForm
+from .models import Contact
+from .forms import ContactForm
 from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
+
+def main(request):
+    return render(request, 'blog/main.html')
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -75,3 +80,7 @@ def project_list(request):
 def other_list(request):
     others = Other.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/other_list.html', {'others': others})
+
+def contact_list(request):
+    contact = get_object_or_404(Contact)
+    return render(request, 'blog/contact_list.html', {'contact': contact})

@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+        <p class="title">Kontakt</p>
+    <div class="contact">
+        <h1>{{ contact.title }}</h1>
+        <p>{{ contact.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}

@@ -3,6 +3,7 @@ from .models import Post
 from .models import About
 from .models import Project
 from .models import Other
+from .models import Contact
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -23,4 +24,9 @@ class OtherForm(forms.ModelForm):
     class Meta:
         model = Other
         fields = ('title', 'text', 'picture')
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ('title', 'text')
 
