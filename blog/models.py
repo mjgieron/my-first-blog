@@ -17,4 +17,14 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+class About(models.Model):
+    title = models.CharField(max_length=200)
+    text = models.TextField()
+    picture = models.ImageField(upload_to='documents/', null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
+    def publish(self):
+        self.save()
 

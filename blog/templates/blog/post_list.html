@@ -1,6 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+        <p class="title">Współpraca z autorami</p>
     {% for post in posts %}
         <div class="post">
             <img src="{{ MEDIA_URL }}/documents/{{ post.picture }}" alt="img" class="avatar" width="100" height="100">

@@ -25,6 +25,8 @@ urlpatterns = [
     url(r'^post/new/$', views.post_new, name='post_new'),
     url(r'^post/(?P<pk>[0-9]+)/edit/$', views.post_edit, name='post_edit'),
     url(r'^post/(?P<pk>[0-9]+)/delete/$', views.post_delete, name='post_delete'),
+    url(r'^about/(?P<pk>[0-9]+)/edit/$', views.about_edit, name='about_edit'),
+    url(r'^about/$', views.about_show, name='about_show'),
     url(r'^admin/', include(admin.site.urls)),
 ]
 

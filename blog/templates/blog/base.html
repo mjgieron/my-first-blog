@@ -10,21 +10,20 @@
     <body>
         <div class="page-header">
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <h1><a href="/">Strona Kingi Polak</a></h1>
+            <h1><a href="/">nazwa...</a></h1>
         </div>
         <div class="content container">
         <div class="menu">
         {% block nav %}
         <ul id="nav">
-            <li>{% block nav-home %}<a href="{% url 'post_list' %}">O mnie</a>{% endblock %}</li>
+            <li>{% block nav-home %}<a href="{% url 'about_show' %}">O mnie</a>{% endblock %}</li>
             <li>{% block nav-author %}<a href="{% url 'post_list' %}">Współpraca z autorami</a>{% endblock %}</li>
-            <li>{% block nav-books %}<a href="{% url 'post_list' %}">Wydane pozycje</a>{% endblock %}</li>
+            <li>{% block nav-books %}<a href="{% url 'post_list' %}">Zrealizowane projekty</a>{% endblock %}</li>
             <li>{% block nav-contact %}<a href="{% url 'post_list' %}">Kontakt</a>{% endblock %}</li>
         </ul>
         {% endblock %}
         </div>
         <div class="row">
-        <p class="title">Współpraca z autorami</p>
             <div class="col-md-8">
                 {% block content %}
                 {% endblock %}
