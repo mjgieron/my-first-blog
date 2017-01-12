@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+   <form method="ABOUT" class="about-form">{% csrf_token %}
+    <a class="btn btn-default" href="{% url 'about_edit' pk=about.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <img src="{{ MEDIA_URL }}/documents/{{ about.picture }}" alt="img" class="avatar" width="100" height="100">
+    <h1>{{ about.title }}</h1>
+    <p>{{ about.text|linebreaksbr }}</p>
+   </form>
+{% endblock %}
+
