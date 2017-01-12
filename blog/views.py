@@ -5,6 +5,8 @@ from .models import About
 from .forms import AboutForm
 from .models import Project
 from .forms import ProjectForm
+from .models import Other
+from .forms import OtherForm
 from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
@@ -69,3 +71,7 @@ def about_edit(request, pk):
 def project_list(request):
     projects = Project.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/project_list.html', {'projects': projects})
+
+def other_list(request):
+    others = Other.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'blog/other_list.html', {'others': others})

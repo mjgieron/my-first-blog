@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+        <p class="title">Współpraca z autorami</p>
+    {% for other in others %}
+        <div class="other">
+            <img src="{{ MEDIA_URL }}/documents/{{ other.picture }}" alt="img" class="avatar" width="100" height="100">
+            <h1>{{ other.title }}</h1>
+            <p>{{ other.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
+

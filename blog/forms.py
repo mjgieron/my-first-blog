@@ -2,7 +2,7 @@ from django import forms
 from .models import Post
 from .models import About
 from .models import Project
-
+from .models import Other
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -19,5 +19,8 @@ class ProjectForm(forms.ModelForm):
         model = Project
         fields = ('title', 'text', 'picture')
 
-
+class OtherForm(forms.ModelForm):
+    class Meta:
+        model = Other
+        fields = ('title', 'text', 'picture')
 

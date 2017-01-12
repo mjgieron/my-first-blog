@@ -19,6 +19,7 @@
             <li>{% block nav-home %}<a href="{% url 'about_show' %}">O mnie</a>{% endblock %}</li>
             <li>{% block nav-author %}<a href="{% url 'post_list' %}">Współpraca z autorami</a>{% endblock %}</li>
             <li>{% block nav-books %}<a href="{% url 'project_list' %}">Zrealizowane projekty</a>{% endblock %}</li>
+            <li>{% block nav-others %}<a href="{% url 'other_list' %}">Projekty specjalne</a>{% endblock %}</li>
             <li>{% block nav-contact %}<a href="{% url 'post_list' %}">Kontakt</a>{% endblock %}</li>
         </ul>
         {% endblock %}

@@ -37,3 +37,13 @@ class Project(models.Model):
     def publish(self):
         self.published_date = timezone.now()
         self.save()
+
+class Other(models.Model):
+    title = models.CharField(max_length=200)
+    text = models.TextField()
+    picture = models.ImageField(upload_to='documents/', null=True, blank=True)
+    published_date = models.DateTimeField(blank=True, null=True)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
