@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+        <p class="title">Zrealizowane projekty</p>
+    {% for project in projects %}
+        <div class="project">
+            <img src="{{ MEDIA_URL }}/documents/{{ project.picture }}" alt="img" class="avatar" width="100" height="100">
+            <h1>{{ project.title }}</h1>
+            <p>{{ project.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
+
+
